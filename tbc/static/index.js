@@ -12,8 +12,17 @@ input.addEventListener("keypress", (event) => {
 
 const onHomeSubmit = async () => {
     document.getElementById("input-submit").textContent = "Loading..."; 
-    const keyWords = document.getElementById("keywords-input").value; 
-    const ideas = await generateIdeas(keyWords);
+    const keyWords = document.getElementById("keywords-input").value;
+    const rawResponse = await fetch('https://tobeecontinued.herokuapp.com/tbc/ideas', {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({"prompt" : keyWords})
+  });
+    const content = await rawResponse.json();
+    const ideas = content.data;
     let ideasStr = "";
     for (let i in ideas) {
         ideasStr += `${ideas[i]}|`
@@ -21,5 +30,5 @@ const onHomeSubmit = async () => {
     sessionStorage.setItem("optionList", ideasStr);
     sessionStorage.setItem("keyWords", keyWords);
     
-    location.replace("options.html");
+    location.replace("/tbc/options");
 }

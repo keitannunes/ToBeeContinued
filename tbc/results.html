@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Bee Continued</title>
+    <link rel= "stylesheet" type= "text/css" href= "static\styles.css">
+</head>
+<body>
+<nav>
+    <a href="/tbc"><img id="bee" src="static/bee.png" alt="bee"></a>
+    <p id="nav"><a href="/tbc" id="logo">To Bee Continued...</a></p>
+</nav>
+<div>
+    <h2 id="title"></h2>
+    <h3 id="idea"></h3>
+    <p id="scriptText"></p>
+    <div id="pics">
+        <img id="img0" src="static/loading.png" class="generatedArt" alt="loading..."/>
+        <img id="img1" src="static/loading.png" class="generatedArt" alt="loading..."/>
+        <img id="img2" src="static/loading.png" class="generatedArt" alt="loading..."/>
+    </div>
+</div>
+<div id="regenerate-buttons">
+    <button class="regenerate-buttons" onclick="reGenerateTitle()">Regenerate Title</button>
+    <button class="regenerate-buttons" onclick="reGenerateScript()">Regenerate Story</button>
+    <button class="regenerate-buttons" onclick="reGenerateImages()">Regenerate Images</button>
+
+</div>
+<p><a href="/tbc/options" id="back">★ back ★</a></p>
+<div>
+    <p id="creators">Meet the Creators!</p>
+    <div id="creators-container">
+        <div id="images">
+            <img src="static/keita.jpg" class="people" alt="Keita">
+            <img src="static/shaun.jpg" class="people" alt="Shaun">
+            <img src="static/julia.jpg" class="people" alt="Julia">
+            <img src="static/rajab.jpg" class="people" alt="Rajab">
+        </div>
+        <div id="names">
+            <p>Keita</p>
+            <p>Shaun</p>
+            <p>Julia</p>
+            <p>Bajar</p>
+        </div>
+    </div>
+</div>
+<script src="static/results.js"></script>
+</body>
+</html>
